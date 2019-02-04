@@ -5,7 +5,7 @@ node {
    }
    stage('Build') {
       // Run the maven build
-      sh "mvn clean package surefire-report:report"
+      sh "mvn -DskipTests clean package surefire-report:report"
    }
    stage('Publish') {
       junit '**/target/surefire-reports/TEST-*.xml'
